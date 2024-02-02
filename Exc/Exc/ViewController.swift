@@ -41,15 +41,23 @@ class ViewController: UIViewController {
     private let saveButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .lightGray
-        button.titleLabel?.text = "Save"
+        button.setTitle("Save", for: .normal)
         button.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    private let deleteButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Delete", for: .normal)
+        button.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+        button.backgroundColor = .red
         return button
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
-        getStoredUS()
+        showOnDisplay()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -60,20 +68,35 @@ class ViewController: UIViewController {
 }
 extension ViewController {
     @objc func saveButtonTapped(_ sender: UIButton){
-        nameLabel.text = nameTextField.text?.lowercased()
-        birthDateLabel.text = birthDateTextField.text?.lowercased()
         guard let name = nameTextField.text else {return}
         guard let birth = birthDateTextField.text else {return}
         UserDefaults.standard.set(name, forKey: "name")
         UserDefaults.standard.set(birth, forKey: "birth")
+        showOnDisplay()
     }
-    func getStoredUS(){
-        if let storedName = UserDefaults.standard.object(forKey: "name"){
-            nameLabel.text = "Name: \(storedName)"
+    @objc func deleteButtonTapped(_ sender: UIButton){
+        let getUS = getStoredUS()
+        let getUSName = getUS[0].count
+        let getUSBirth  = getUS[1].count
+        if getUSName != 0 {
+            UserDefaults.standard.removeObject(forKey: "name")
+            if getUSBirth != 0 {
+                UserDefaults.standard.removeObject(forKey: "birth")
+            }
         }
-        if let storedBirth = UserDefaults.standard.object(forKey: "birth"){
-            birthDateLabel.text = "BirthDate: \(storedBirth)"
+        showOnDisplay()
+    }
+    func showOnDisplay(){
+        let getUS = getStoredUS()
+        nameLabel.text = getUS.first
+        birthDateLabel.text = getUS.last
+    }
+    func getStoredUS() -> [String] {
+        if let storedName = UserDefaults.standard.object(forKey: "name") as? String,
+           let storedBirth = UserDefaults.standard.object(forKey: "birth") as? String {
+            return [storedName, storedBirth]
         }
+        return ["", ""]
     }
     
     func style(){
@@ -94,7 +117,7 @@ extension ViewController {
         view.addSubview(saveButton)
         view.addSubview(nameLabel)
         view.addSubview(birthDateLabel)
-        
+        view.addSubview(deleteButton)
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -125,6 +148,11 @@ extension ViewController {
             birthDateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             birthDateLabel.leadingAnchor.constraint(equalTo: backgroundImageView.leadingAnchor, constant: 10),
             birthDateLabel.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor, constant: 10)
+        ])
+        NSLayoutConstraint.activate([
+            deleteButton.topAnchor.constraint(equalTo: birthDateLabel.bottomAnchor, constant: 10),
+            deleteButton.leadingAnchor.constraint(equalTo: backgroundImageView.leadingAnchor, constant: 10),
+            deleteButton.trailingAnchor.constraint(equalTo: backgroundImageView.trailingAnchor, constant: 10)
         ])
         
     }

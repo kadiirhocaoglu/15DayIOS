@@ -14,9 +14,88 @@
             filePath = "Exc/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "layout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C60E87A7-82E9-460C-BE17-361BE838D699"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Exc/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "deleteButtonTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C60E87A7-82E9-460C-BE17-361BE838D699 - fd4c20b4e2970c2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Exc.ViewController.saveButtonTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "Exc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadirhocaoglu/Desktop/15DayIOS/Exc/Exc/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1628">
+               </Location>
+               <Location
+                  uuid = "C60E87A7-82E9-460C-BE17-361BE838D699 - 7e9784b372f6bcc4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Exc.ViewController.deleteButtonTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "Exc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadirhocaoglu/Desktop/15DayIOS/Exc/Exc/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "C60E87A7-82E9-460C-BE17-361BE838D699 - 7e9784b372f6bca5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Exc.ViewController.deleteButtonTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "Exc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadirhocaoglu/Desktop/15DayIOS/Exc/Exc/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53366526-F8F4-4166-9B0D-C9E05F8E4AEC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Exc/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "deleteButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
